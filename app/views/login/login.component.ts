@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-import { Router } from "@angular/router";
-
+//import { Router } from "@angular/router";
+import { RouterExtensions } from "nativescript-angular/router";
 import { Page } from "ui/page";
 import { Color } from "color";
 import { View } from "ui/core/view";
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     @ViewChild("email") email: ElementRef;
     @ViewChild("password") password: ElementRef;
 
-    constructor(private router: Router, private userService: UserService, private page: Page) {
+    constructor(private routerExtensions: RouterExtensions, private userService: UserService, private page: Page) {
         this.user = new User();
         // For Dev
         this.user.email = "fernando@nativescript.com";
@@ -44,7 +44,8 @@ export class LoginComponent implements OnInit {
             return;
         }
         this.userService.login(this.user);
-        this.router.navigate(["/main"])
+        console.log("Logged In");
+        this.routerExtensions.navigate(["/main"], { clearHistory: true });
     }
     signUp() {
 

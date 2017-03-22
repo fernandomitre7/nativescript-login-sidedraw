@@ -9,9 +9,12 @@ import { ItemDetailComponent } from "./item/item-detail.component";
 
 const routes: Routes = [
     { path: "", component: LoginComponent },
-    { path: "main", component: MainComponent },
-    { path: "items", component: ItemsComponent },
-    { path: "item/:id", component: ItemDetailComponent },
+    {
+        path: "main", component: MainComponent, children: [
+            { path: "items", component: ItemsComponent, outlet: "maincontentoutlet" },
+            { path: "item/:id", component: ItemDetailComponent, outlet: "maincontentoutlet" },
+        ]
+    }
 ];
 
 export const navigatableComponents = [

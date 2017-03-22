@@ -1,21 +1,27 @@
-<RadSideDrawer tkToggleNavButton>
-    <StackLayout tkDrawerContent class="sideStackLayout">
-        <StackLayout class="sideTitleStackLayout">
-            <Label text="Navigation Menu"></Label>
+<!--<router-outlet name="maincontentoutlet"></router-outlet>-->
+<ActionBar title="LoginWithSideBar">
+    <ActionItem text="Menu" (tap)="toogleSideDraw()" icon="res://ic_menu.png"></ActionItem>
+</ActionBar>
+<StackLayout>
+    <RadSideDrawer #drawer (drawerOpening)="onDrawerOpening()" (drawerOpened)="onDrawerOpened()" (drawerClosing)="onDrawerClosing()"
+        (drawerClosed)="onDrawerClosed()" [transition]="sideDrawerTransition" selectionBehavior="None">
+        <StackLayout tkDrawerContent class="sideStackLayout">
+            <StackLayout class="sideTitleStackLayout">
+                <Label text="Navigation Menu"></Label>
+            </StackLayout>
+            <StackLayout class="sideStackLayout">
+                <Label text="Primary" class="sideLabel sideLightGrayLabel"></Label>
+                <Label text="Social" class="sideLabel"></Label>
+                <Label text="Promotions" class="sideLabel"></Label>
+                <Label text="Labels" class="sideLabel sideLightGrayLabel"></Label>
+                <Label text="Important" class="sideLabel"></Label>
+                <Label text="Starred" class="sideLabel"></Label>
+                <Label text="Sent Mail" class="sideLabel"></Label>
+                <Label text="Drafts" class="sideLabel"></Label>
+            </StackLayout>
         </StackLayout>
-        <StackLayout class="sideStackLayout">
-            <Label text="Primary" class="sideLabel sideLightGrayLabel"></Label>
-            <Label text="Social" class="sideLabel"></Label>
-            <Label text="Promotions" class="sideLabel"></Label>
-            <Label text="Labels" class="sideLabel sideLightGrayLabel"></Label>
-            <Label text="Important" class="sideLabel"></Label>
-            <Label text="Starred" class="sideLabel"></Label>
-            <Label text="Sent Mail" class="sideLabel"></Label>
-            <Label text="Drafts" class="sideLabel"></Label>
+        <StackLayout tkMainContent>
+            <router-outlet name="maincontentoutlet"></router-outlet>
         </StackLayout>
-    </StackLayout>
-    <StackLayout tkMainContent>
-        <Label [text]="mainContentText" textWrap="true" class="drawerContentText"></Label>
-        <Button text="OPEN DRAWER" (tap)=openDrawer()></Button>
-    </StackLayout>
-</RadSideDrawer>
+    </RadSideDrawer>
+</StackLayout>
