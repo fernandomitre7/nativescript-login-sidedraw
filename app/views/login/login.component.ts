@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         }
         this.userService.login(this.user);
         console.log("Logged In");
-        this.routerExtensions.navigate(["/main"], { clearHistory: true });
+        this.routerExtensions.navigate(["main"], { clearHistory: true });
     }
     signUp() {
 

@@ -5,7 +5,7 @@ import { Item } from "./item";
 import { ItemService } from "./item.service";
 
 @Component({
-    selector: "ns-details",
+    selector: "item-details",
     moduleId: module.id,
     templateUrl: "./item-detail.component.html",
 })

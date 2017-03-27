@@ -13,14 +13,8 @@
         </StackLayout>
 
         <StackLayout class="sidedrawer-content">
-            <Label text="Primary" class="sideLabel sideLightGrayLabel"></Label>
-            <Label text="Social" class="sideLabel"></Label>
-            <Label text="Promotions" class="sideLabel"></Label>
-            <Label text="Labels" class="sideLabel sideLightGrayLabel"></Label>
-            <Label text="Important" class="sideLabel"></Label>
-            <Label text="Starred" class="sideLabel"></Label>
-            <Label text="Sent Mail" class="sideLabel"></Label>
-            <Label text="Drafts" class="sideLabel"></Label>
+            <Label text="Home" [nsRouterLink]="['/main']" nsRouterLinkActive="active" [nsRouterLinkActiveOptions]="{exact:true}"></Label>
+            <Label text="Items" [nsRouterLink]="['/main/items']" nsRouterLinkActive="active"></Label>
         </StackLayout>
 
     </StackLayout>

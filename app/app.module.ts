@@ -5,9 +5,9 @@ import { SIDEDRAWER_DIRECTIVES } from 'nativescript-telerik-ui/sidedrawer/angula
 import { AppRoutingModule, navigatableComponents } from "./app.routing";
 import { AppComponent } from "./app.component";
 
-import { ItemService } from "./item/item.service";
-import { ItemsComponent } from "./item/items.component";
-import { ItemDetailComponent } from "./item/item-detail.component";
+import { ItemService } from "./views/items/item.service";
+import { ItemsComponent } from "./views/items/items.component";
+import { ItemDetailComponent } from "./views/items/item-detail.component";
 
 @NgModule({
     bootstrap: [
