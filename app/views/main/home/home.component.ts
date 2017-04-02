@@ -4,8 +4,8 @@ import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
     selector: "home",
-    templateUrl: "views/home/home.component.html",
-    styleUrls: ["views/home/home.component.css"]
+    templateUrl: "views/main/home/home.component.html",
+    styleUrls: ["views/main/home/home.component.css"]
 })
 export class HomeComponent {
     constructor(private routerExtensions: RouterExtensions, private route: ActivatedRoute) {
@@ -13,7 +13,6 @@ export class HomeComponent {
     }
 
     goToItems() {
-        console.log("goToItems");
-        this.routerExtensions.navigate(["items"]);
+        this.routerExtensions.navigate(["items"], { relativeTo: this.route });
     }
 }

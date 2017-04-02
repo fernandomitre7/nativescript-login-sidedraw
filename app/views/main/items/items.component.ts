@@ -5,7 +5,7 @@ import { ItemService } from "./item.service";
 
 @Component({
     selector: "items",
-    templateUrl: "views/items/items.component.html",
+    templateUrl: "views/main/items/items.component.html",
 })
 export class ItemsComponent implements OnInit {
     items: Item[];
